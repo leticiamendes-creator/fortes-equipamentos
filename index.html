@@ -15,6 +15,7 @@
   --warning:#e67700;--warning-light:#fff9db;
   --info:#1971c2;--info-light:#e7f5ff;
   --purple:#6741d9;--purple-light:#f3eefe;
+  --brand:#c1121f;--brand-light:#fdecea;--brand-dark:#8f0e17;
   --radius:8px;--radius-lg:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -28,7 +29,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .nav-section{font-size:10px;font-weight:600;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:.06em;padding:12px 10px 4px;margin-top:4px}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:var(--radius);cursor:pointer;color:rgba(255,255,255,0.55);font-size:13px;font-weight:500;transition:all .15s;margin-bottom:2px}
 .nav-item:hover{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.9)}
-.nav-item.active{background:var(--green);color:#fff}
+.nav-item.active{background:var(--brand);color:#fff}
 .nav-item i{font-size:17px}
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .topbar{background:var(--white);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
@@ -38,8 +39,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--white);color:var(--gray-800);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
 .btn:hover{background:var(--gray-100)}
-.btn-primary{background:var(--green);border-color:var(--green);color:#fff}
-.btn-primary:hover{background:#155c38;border-color:#155c38}
+.btn-primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.btn-danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn-danger:hover{background:#c92a2a;border-color:#c92a2a}
 .btn-sm{padding:5px 10px;font-size:12px}
 .btn i{font-size:15px}
 
@@ -85,7 +88,7 @@ select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radiu
 .form-group{margin-bottom:14px}
 .form-group label{display:block;font-size:12px;font-weight:600;color:var(--gray-600);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--gray-900);outline:none;transition:border-color .15s;background:var(--white)}
-.form-group input:focus,.form-group select:focus{border-color:var(--green)}
+.form-group input:focus,.form-group select:focus{border-color:var(--brand)}
 .form-group textarea{resize:vertical;min-height:70px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
@@ -128,9 +131,9 @@ select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radiu
 .aniv-mes-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px}
 .mes-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:12px;font-weight:500;color:var(--gray-600);cursor:pointer;transition:all .15s}
 .mes-btn:hover{background:var(--gray-100)}
-.mes-btn.active{background:var(--green);border-color:var(--green);color:#fff}
-.mes-btn.tem-data{border-color:var(--green);color:var(--green)}
-.mes-btn.tem-data.active{background:var(--green);color:#fff}
+.mes-btn.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.mes-btn.tem-data{border-color:var(--brand);color:var(--brand)}
+.mes-btn.tem-data.active{background:var(--brand);color:#fff}
 .aniv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .aniv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;display:flex;align-items:center;gap:12px}
 .aniv-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
@@ -141,7 +144,7 @@ select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radiu
 /* RAMAIS */
 .ramal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .ramal-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;display:flex;align-items:center;gap:12px}
-.ramal-num{font-size:22px;font-weight:700;color:var(--green);font-family:monospace;min-width:52px}
+.ramal-num{font-size:22px;font-weight:700;color:var(--brand);font-family:monospace;min-width:52px}
 .ramal-nome{font-size:13px;font-weight:600;color:var(--gray-900)}
 .ramal-login{font-size:11px;color:var(--gray-500);margin-top:2px;word-break:break-all}
 
@@ -205,6 +208,15 @@ select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radiu
     </div>
     <div class="modal-body">
       <input type="hidden" id="colab-id">
+      <div class="form-group" style="display:flex;align-items:center;gap:14px">
+        <div id="colab-foto-preview" style="width:64px;height:64px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;border:1px solid var(--border)">
+          <i class="ti ti-user" style="font-size:26px;color:var(--gray-400)"></i>
+        </div>
+        <div style="flex:1">
+          <label>Foto do colaborador</label>
+          <input type="file" id="colab-foto-file" accept="image/*" onchange="previewColabFoto(event)">
+        </div>
+      </div>
       <div class="form-row">
         <div class="form-group"><label>Nome completo</label><input type="text" id="colab-nome"></div>
         <div class="form-group"><label>Código</label><input type="text" id="colab-codigo" placeholder="Ex: FORTES05-KARINA"></div>
@@ -293,6 +305,11 @@ function showToast(msg,type='success'){const t=document.getElementById('toast');
 function openModal(id){document.getElementById(id).classList.add('open')}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
 function avClass(setor){return setor==='CS'?'av-cs':setor==='Suporte e CS'?'av-suporteecs':'av-suporte'}
+function avatarHtml(c,extraStyle){
+  const style=extraStyle||'';
+  if(c.foto_url)return`<div class="avatar" style="padding:0;overflow:hidden;${style}"><img src="${c.foto_url}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.parentElement.classList.add('${avClass(c.setor)}');this.parentElement.textContent='${initials(c.nome)}'"></div>`;
+  return`<div class="avatar ${avClass(c.setor)}" style="${style}">${initials(c.nome)}</div>`;
+}
 function setorKey(setor){return setor==='CS'?'cs':setor==='Suporte e CS'?'suporte-cs':'suporte'}
 
 function calcAnos(dataStr){
@@ -307,6 +324,7 @@ function calcAnos(dataStr){
 
 let currentSection='resumo';
 let colaboradores=[],equipamentos=[],movimentacoes=[];
+let colabFotoFile=null;
 
 async function loadAll(){
   [colaboradores,equipamentos,movimentacoes]=await Promise.all([
@@ -368,7 +386,7 @@ function renderResumo(){
     }).join('');
     return`<div class="resumo-card" data-nome="${c.nome.toLowerCase()}" data-setor="${c.setor}">
       <div class="resumo-header ${setorKey(c.setor)}">
-        <div class="avatar ${avClass(c.setor)}">${initials(c.nome)}</div>
+        ${avatarHtml(c)}
         <div style="flex:1"><div class="resumo-name">${c.nome}</div><div class="resumo-cargo">${c.cargo||''}</div></div>
         <span class="badge ${c.setor==='CS'?'badge-green':c.setor==='Suporte e CS'?'badge-purple':'badge-blue'}">${c.setor}</span>
       </div>
@@ -461,7 +479,7 @@ function renderRamais(){
         <div class="ramal-login">${c.login||'—'}</div>
         <div style="margin-top:4px"><span class="badge ${c.setor==='CS'?'badge-green':c.setor==='Suporte e CS'?'badge-purple':'badge-blue'}">${c.setor}</span></div>
       </div>
-      <div class="avatar ${avClass(c.setor)}" style="flex-shrink:0">${initials(c.nome)}</div>
+      ${avatarHtml(c,'flex-shrink:0')}
     </div>`).join('');
 
   content.innerHTML=`<div class="ramal-grid" id="ramal-grid">${cards||'<div class="empty-state"><i class="ti ti-phone-off"></i><p>Nenhum ramal cadastrado.</p></div>'}</div>`;
@@ -491,9 +509,10 @@ function renderColaboradores(){
         const equips=equipByColab[c.id]||[];
         return`<div class="collab-card" data-nome="${c.nome.toLowerCase()}" data-setor="${c.setor}">
           <div class="collab-card-header">
-            <div class="avatar ${avClass(c.setor)}">${initials(c.nome)}</div>
+            ${avatarHtml(c)}
             <div><div class="collab-name">${c.nome}</div><div class="collab-setor">${c.cargo||c.setor} · Ramal ${c.ramal||'—'}</div></div>
             <button class="btn btn-sm" style="margin-left:auto" onclick="openEditColaborador('${c.id}')"><i class="ti ti-edit"></i></button>
+            <button class="btn btn-sm btn-danger" onclick="deleteColaborador('${c.id}')"><i class="ti ti-trash"></i></button>
           </div>
           <div class="equip-list">
             ${equips.length===0?'<p style="font-size:12px;color:var(--gray-400);padding:8px 0;text-align:center">Sem equipamentos alocados</p>':
@@ -556,7 +575,7 @@ function renderMovimentar(){
   const content=document.getElementById('content');
   content.innerHTML=`
     <div style="max-width:560px;margin:0 auto"><div class="card">
-      <div class="card-header"><h2><i class="ti ti-transfer" style="margin-right:8px;color:var(--green)"></i>Registrar movimentação</h2></div>
+      <div class="card-header"><h2><i class="ti ti-transfer" style="margin-right:8px;color:var(--brand)"></i>Registrar movimentação</h2></div>
       <div style="padding:20px">
         <div class="form-group"><label>Equipamento</label>
           <select id="mov-eq"><option value="">Selecione o equipamento...</option>
@@ -620,9 +639,31 @@ function filterHistorico(){
 }
 
 // ── CRUD ──────────────────────────────────────────────────────────────────
+function previewColabFoto(evt){
+  const file=evt.target.files[0];if(!file)return;
+  colabFotoFile=file;
+  const reader=new FileReader();
+  reader.onload=e=>{document.getElementById('colab-foto-preview').innerHTML=`<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover">`;};
+  reader.readAsDataURL(file);
+}
+function resetColabFotoPreview(url){
+  colabFotoFile=null;
+  document.getElementById('colab-foto-file').value='';
+  document.getElementById('colab-foto-preview').innerHTML=url?`<img src="${url}" style="width:100%;height:100%;object-fit:cover">`:'<i class="ti ti-user" style="font-size:26px;color:var(--gray-400)"></i>';
+}
+async function uploadColabFoto(file,colabId){
+  const ext=(file.name.split('.').pop()||'jpg').toLowerCase();
+  const path=`colab-${colabId||'novo'}-${Date.now()}.${ext}`;
+  const res=await fetch(`${SB_URL}/storage/v1/object/fotos-colaboradores/${path}`,{
+    method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':file.type||'image/jpeg'},body:file
+  });
+  if(!res.ok){const e=await res.json().catch(()=>({message:'Erro ao enviar foto'}));throw new Error(e.message||'Erro ao enviar foto. Verifique se o bucket "fotos-colaboradores" existe e é público no Supabase Storage.');}
+  return `${SB_URL}/storage/v1/object/public/fotos-colaboradores/${path}`;
+}
 function openNovoColaborador(){
   ['colab-id','colab-nome','colab-codigo','colab-cargo','colab-login','colab-ramal','colab-admissao','colab-aniversario'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('colab-setor').value='Suporte';
+  resetColabFotoPreview(null);
   document.getElementById('modal-colab-title').textContent='Novo colaborador';
   openModal('modal-colaborador');
 }
@@ -637,17 +678,44 @@ function openEditColaborador(id){
   document.getElementById('colab-ramal').value=c.ramal||'';
   document.getElementById('colab-admissao').value=c.data_admissao||'';
   document.getElementById('colab-aniversario').value=c.data_aniversario||'';
+  resetColabFotoPreview(c.foto_url||null);
   document.getElementById('modal-colab-title').textContent='Editar colaborador';
   openModal('modal-colaborador');
+}
+async function deleteColaborador(id){
+  const c=colaboradores.find(x=>x.id===id);if(!c)return;
+  const equipVinculados=equipamentos.filter(e=>e.colaborador_atual_id===id);
+  let msg=`Tem certeza que deseja excluir este colaborador?\n\n${c.nome}`;
+  if(equipVinculados.length>0)msg+=`\n\nEste colaborador possui ${equipVinculados.length} equipamento(s) alocado(s). Eles serão desvinculados automaticamente (ficarão como "Disponível").`;
+  if(!confirm(msg))return;
+  try{
+    if(equipVinculados.length>0){
+      await Promise.all(equipVinculados.map(e=>api('equipamentos?id=eq.'+e.id,'PATCH',{colaborador_atual_id:null,status:'disponível'})));
+      equipVinculados.forEach(e=>{e.colaborador_atual_id=null;e.status='disponível';});
+    }
+    await api('colaboradores?id=eq.'+id,'DELETE');
+    colaboradores=colaboradores.filter(x=>x.id!==id);
+    showToast('Colaborador excluído!');render(currentSection);
+  }catch(e){
+    if((e.message||'').toLowerCase().includes('foreign key')||(e.message||'').toLowerCase().includes('violates')){
+      showToast('Não foi possível excluir: colaborador ainda possui vínculos (ex: movimentações registradas).','error');
+    }else{
+      showToast(e.message,'error');
+    }
+  }
 }
 async function saveColaborador(){
   const id=document.getElementById('colab-id').value;
   const data={nome:document.getElementById('colab-nome').value.trim(),setor:document.getElementById('colab-setor').value,codigo:document.getElementById('colab-codigo').value.trim()||null,cargo:document.getElementById('colab-cargo').value.trim()||null,login:document.getElementById('colab-login').value.trim()||null,ramal:document.getElementById('colab-ramal').value.trim()||null,data_admissao:document.getElementById('colab-admissao').value||null,data_aniversario:document.getElementById('colab-aniversario').value||null};
   if(!data.nome)return showToast('Preencha o nome','error');
   try{
+    if(colabFotoFile){
+      data.foto_url=await uploadColabFoto(colabFotoFile,id);
+    }
     if(id)await api('colaboradores?id=eq.'+id,'PATCH',data);
     else await api('colaboradores','POST',data);
     closeModal('modal-colaborador');showToast(id?'Atualizado!':'Cadastrado!');render(currentSection);
+    colabFotoFile=null;
   }catch(e){showToast(e.message,'error')}
 }
 
